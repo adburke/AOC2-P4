@@ -9,6 +9,7 @@
 #import "EventManager.h"
 
 @implementation EventManager
+@synthesize textAreaString;
 
 static EventManager *_instance = nil;
 
@@ -16,7 +17,7 @@ static EventManager *_instance = nil;
 {
     if (_instance == nil)
     {
-        [[self alloc] init];
+        _instance = [[self alloc] init];
     }
 }
 
@@ -35,9 +36,19 @@ static EventManager *_instance = nil;
 {
     if (self = [super init])
     {
-        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if (defaults != nil)
+        {
+            [self setTextAreaString:[defaults objectForKey:@"events"]];
+        }
+        textAreaString = @"";
     }
     return self;
+}
+
+-(void)setTextArea
+{
+    
 }
 
 @end

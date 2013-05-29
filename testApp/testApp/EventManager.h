@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface EventManager : NSObject
+{
+    NSString *textAreaString;
+}
 
-+(void)CreateInstance;
+@property NSString *textAreaString;
+
 +(EventManager*)GetInstance;
 
 @end

@@ -41,12 +41,12 @@ static EventManager *_instance = nil;
         {
             [self setTextAreaString:[defaults objectForKey:@"events"]];
         }
-        textAreaString = @"";
+        [self setTextAreaString:@""];
     }
     return self;
 }
 
--(void)setTextArea
+-(void)setTextArea:(NSString *)eventName date:(NSString *)date
 {
     
 }

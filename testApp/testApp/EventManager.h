@@ -16,5 +16,6 @@
 @property NSString *textAreaString;
 
 +(EventManager*)GetInstance;
+-(void)setTextArea:(NSString *)eventName date:(NSString *)date;
 
 @end

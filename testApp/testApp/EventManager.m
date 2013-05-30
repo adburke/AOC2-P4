@@ -42,7 +42,10 @@ static EventManager *_instance = nil;
         {
             [self setTextAreaString:[defaults objectForKey:@"events"]];
         }
-        [self setTextAreaString:@""];
+        else
+        {
+            [self setTextAreaString:@""];
+        }
     }
     return self;
 }

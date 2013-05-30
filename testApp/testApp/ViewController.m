@@ -18,7 +18,18 @@
 
 -(IBAction)onClick:(id)sender
 {
-    
+    UIButton *button = (UIButton*)sender;
+    if (button) {
+        if (button.tag == 0) {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            if (defaults)
+            {
+                [defaults setObject:eventTextView.text forKey:@"events"];
+                
+                [defaults synchronize];
+            }
+        }
+    }
 }
 
 -(void)swipeRight:(UISwipeGestureRecognizer*)recognizer
@@ -30,7 +41,12 @@
 }
 
 - (void)viewDidLoad
-{    
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (defaults)
+    {
+        eventTextView.text = [defaults objectForKey:@"events"];
+    }
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }

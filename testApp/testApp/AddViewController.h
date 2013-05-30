@@ -19,4 +19,6 @@
     UISwipeGestureRecognizer *leftSwiper;
 }
 
+-(IBAction)onClick:(id)sender;
+
 @end

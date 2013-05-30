@@ -15,6 +15,18 @@
 
 @implementation AddViewController
 
+-(void)onClick:(id)sender
+{
+    UIButton *button = (UIButton*)sender;
+    if (button) {
+        if (button.tag == 1) {
+            // Closes the keyboard
+            NSLog(@"Close Keyboard Pressed");
+            [addEventText resignFirstResponder];
+        }
+    }
+}
+
 // Method the swipe gesture points to - Saves valid data to the singleton and changes back to ViewController
 -(void)swipeLeft:(UISwipeGestureRecognizer*)recognizer
 {

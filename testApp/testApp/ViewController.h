@@ -12,6 +12,7 @@
 {
     IBOutlet UITextView *eventTextView;
     IBOutlet UIButton *saveEvents;
+    IBOutlet UILabel *rightSwipeLabel;
     
     UISwipeGestureRecognizer *rightSwiper;
 }

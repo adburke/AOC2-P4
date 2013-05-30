@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AddViewController.h"
 
 @interface ViewController ()
 
@@ -14,10 +15,32 @@
 
 @implementation ViewController
 
+-(IBAction)onClick:(id)sender
+{
+    
+}
+
+-(void)swipeRight:(UISwipeGestureRecognizer*)recognizer
+{
+    AddViewController *addView = [[AddViewController alloc] initWithNibName:@"AddViewController" bundle:nil];
+    if (addView) {
+        [self presentViewController:addView animated:TRUE completion:nil];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    rightSwiper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];
+    rightSwiper.direction = UISwipeGestureRecognizerDirectionRight;
+    [rightSwipeLabel addGestureRecognizer:rightSwiper];
+    
+    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

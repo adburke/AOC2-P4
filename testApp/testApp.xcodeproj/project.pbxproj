@@ -19,6 +19,8 @@
 		96A01FD017559909004DA9D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A01FCF17559909004DA9D8 /* ViewController.m */; };
 		96A01FD317559909004DA9D8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A01FD117559909004DA9D8 /* ViewController.xib */; };
 		96A01FDB17559A32004DA9D8 /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A01FDA17559A32004DA9D8 /* EventManager.m */; };
+		96DCCA5A1756E0860082AF07 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DCCA581756E0860082AF07 /* AddViewController.m */; };
+		96DCCA5B1756E0860082AF07 /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DCCA591756E0860082AF07 /* AddViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,9 @@
 		96A01FD217559909004DA9D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		96A01FD917559A32004DA9D8 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
 		96A01FDA17559A32004DA9D8 /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
+		96DCCA571756E0860082AF07 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		96DCCA581756E0860082AF07 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		96DCCA591756E0860082AF07 /* AddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +99,9 @@
 				96A01FBD17559909004DA9D8 /* Supporting Files */,
 				96A01FD917559A32004DA9D8 /* EventManager.h */,
 				96A01FDA17559A32004DA9D8 /* EventManager.m */,
+				96DCCA571756E0860082AF07 /* AddViewController.h */,
+				96DCCA581756E0860082AF07 /* AddViewController.m */,
+				96DCCA591756E0860082AF07 /* AddViewController.xib */,
 			);
 			path = testApp;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 				96A01FCB17559909004DA9D8 /* Default@2x.png in Resources */,
 				96A01FCD17559909004DA9D8 /* Default-568h@2x.png in Resources */,
 				96A01FD317559909004DA9D8 /* ViewController.xib in Resources */,
+				96DCCA5B1756E0860082AF07 /* AddViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +191,7 @@
 				96A01FC717559909004DA9D8 /* AppDelegate.m in Sources */,
 				96A01FD017559909004DA9D8 /* ViewController.m in Sources */,
 				96A01FDB17559A32004DA9D8 /* EventManager.m in Sources */,
+				96DCCA5A1756E0860082AF07 /* AddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +316,7 @@
 				96A01FD817559909004DA9D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

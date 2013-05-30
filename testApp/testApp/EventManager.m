@@ -9,21 +9,22 @@
 #import "EventManager.h"
 
 @implementation EventManager
+
 @synthesize textAreaString;
 
 static EventManager *_instance = nil;
 
-+(void)CreateInstance
-{
-    if (_instance == nil)
-    {
-        _instance = [[self alloc] init];
-    }
-}
-
 +(EventManager*)GetInstance
 {
-    return _instance;
+    @synchronized(self){
+        if (_instance == nil)
+        {
+            _instance = [[self alloc] init];
+    
+        }
+    
+        return _instance;
+    }
 }
 
 +(id)alloc
@@ -46,8 +47,17 @@ static EventManager *_instance = nil;
     return self;
 }
 
--(void)setTextArea:(NSString *)eventName date:(NSString *)date
+-(void)createTextAreaStr:(NSString *)eventName date:(NSString *)date
 {
+    NSString *oldString = self.textAreaString;
+    if ([oldString isEqual: @""]) {
+        NSString *newString = [oldString stringByAppendingFormat:@"%@\n%@", eventName, date];
+        self.textAreaString = newString;
+    } else {
+        NSString *newString = [oldString stringByAppendingFormat:@"\n\n%@\n%@", eventName, date];
+        self.textAreaString = newString;
+    }
+    NSLog(@"%@", self.textAreaString);
     
 }
 

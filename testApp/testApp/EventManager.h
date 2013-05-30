@@ -13,9 +13,10 @@
     NSString *textAreaString;
 }
 
-@property NSString *textAreaString;
+@property(nonatomic,strong) NSString *textAreaString;
 
 +(EventManager*)GetInstance;
--(void)setTextArea:(NSString *)eventName date:(NSString *)date;
+
+-(void)createTextAreaStr:(NSString *)eventName date:(NSString *)date;
 
 @end

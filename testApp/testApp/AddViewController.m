@@ -15,6 +15,7 @@
 
 @implementation AddViewController
 
+// Method for close keyboard action
 -(void)onClick:(id)sender
 {
     UIButton *button = (UIButton*)sender;

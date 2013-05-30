@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface AddViewController : UIViewController
+{
+    
+    IBOutlet UIButton *closeKeybrd;
+    IBOutlet UITextField *addEventText;
+    IBOutlet UIDatePicker *datePicker;
+    IBOutlet UILabel *leftSwipeLabel;
+
+    UISwipeGestureRecognizer *leftSwiper;
+}
 
 @end

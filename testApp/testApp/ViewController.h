@@ -11,6 +11,11 @@
 @interface ViewController : UIViewController
 {
     IBOutlet UITextView *eventTextView;
-    IBOutlet UIButton *addEvent;
+    IBOutlet UIButton *saveEvents;
+    
+    UISwipeGestureRecognizer *rightSwiper;
 }
+
+-(IBAction)onClick:(id)sender;
+
 @end

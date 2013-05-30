@@ -43,10 +43,14 @@
 - (void)viewDidLoad
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (defaults)
+ 
+    if ([defaults objectForKey:@"events"] != nil)
     {
         eventTextView.text = [defaults objectForKey:@"events"];
+    } else {
+        eventTextView.text = @"";
     }
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }

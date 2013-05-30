@@ -38,13 +38,13 @@ static EventManager *_instance = nil;
     if (self = [super init])
     {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        if (defaults != nil)
+        if ([defaults objectForKey:@"events"] != nil)
         {
-            [self setTextAreaString:[defaults objectForKey:@"events"]];
+            self.textAreaString = [defaults objectForKey:@"events"];
         }
         else
         {
-            [self setTextAreaString:@""];
+            self.textAreaString = @"";
         }
     }
     return self;

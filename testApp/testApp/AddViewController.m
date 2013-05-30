@@ -15,6 +15,7 @@
 
 @implementation AddViewController
 
+// Method the swipe gesture points to - Saves valid data to the singleton and changes back to ViewController
 -(void)swipeLeft:(UISwipeGestureRecognizer*)recognizer
 {
     
@@ -31,7 +32,7 @@
             [alertView show];
         }
     } else {
-        // On valid event name - creates the date format and passes both strings to the DidSave delegate method
+        // On valid event name - creates the date format and passes both strings to the singelton EventManager method createTextAreaStr
         // Returns back to the main view
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"MM.d.yyyy HH:mm a zz"];
@@ -61,6 +62,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    // Sets up the swipe gesture on the label
     leftSwiper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeLeft:)];
     leftSwiper.direction = UISwipeGestureRecognizerDirectionLeft;
     [leftSwipeLabel addGestureRecognizer:leftSwiper];

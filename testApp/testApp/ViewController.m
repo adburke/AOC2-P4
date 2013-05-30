@@ -16,6 +16,8 @@
 
 @implementation ViewController
 
+// Method for the Save Button
+// Saves data to NSUserDefaults
 -(IBAction)onClick:(id)sender
 {
     UIButton *button = (UIButton*)sender;
@@ -25,13 +27,14 @@
             if (defaults)
             {
                 [defaults setObject:eventTextView.text forKey:@"events"];
-                
+                // Saves the data to the device
                 [defaults synchronize];
             }
         }
     }
 }
-
+// Method that the right swipe gesture points to
+// Displays AddViewController
 -(void)swipeRight:(UISwipeGestureRecognizer*)recognizer
 {
     AddViewController *addView = [[AddViewController alloc] initWithNibName:@"AddViewController" bundle:nil];
@@ -42,6 +45,8 @@
 
 - (void)viewDidLoad
 {
+    // Checks for saved data in NSUserDefaults at the key "events"
+    // If available display in the textView else set textView to a blank string
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
  
     if ([defaults objectForKey:@"events"] != nil)
@@ -57,7 +62,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"viewWillAppear Fired");
+    // Sets the textView to the singleton EventManager property textAreaString
     eventTextView.text = [EventManager GetInstance].textAreaString;
 
     rightSwiper = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight:)];

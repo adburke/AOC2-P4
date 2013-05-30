@@ -16,9 +16,11 @@ static EventManager *_instance = nil;
 
 +(EventManager*)GetInstance
 {
+    // @synchronized(self) added *Not shown in video* seemed to need this to work
     @synchronized(self){
         if (_instance == nil)
         {
+            // _instance = added to clear up warning *Not shown in video like this*
             _instance = [[self alloc] init];
     
         }
@@ -37,6 +39,7 @@ static EventManager *_instance = nil;
 {
     if (self = [super init])
     {
+        // Initialize the singleton with NSUserDefaults data if available
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         if ([defaults objectForKey:@"events"] != nil)
         {
@@ -49,7 +52,7 @@ static EventManager *_instance = nil;
     }
     return self;
 }
-
+// This method sets the textAreaString value of the singleton to pass between views
 -(void)createTextAreaStr:(NSString *)eventName date:(NSString *)date
 {
     NSString *oldString = self.textAreaString;
